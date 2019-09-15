@@ -54,6 +54,7 @@ module Fluent
             rescue
               log.error "client error %s" %[$!]
               @@socket = nil
+              @@queue.enq record
             end
          end
       end
